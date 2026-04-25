@@ -2,6 +2,29 @@
 
 Context for Claude Code (or any Claude session) working on this repo. Read this first before making changes.
 
+## Session continuity (read this first, every session)
+
+Before doing ANY work, read SESSIONS.md. It contains the log of previous sessions.
+At the END of every session (or when asked to checkpoint), append a new entry to SESSIONS.md.
+
+Session log format:
+---
+## Session {N} — {date}
+**Goal:** What this session set out to do
+**Completed:**
+- Specific things finished (file paths, commands run, resources created)
+**State left in:**
+- What's working right now
+- What's broken or incomplete
+**Blockers / open questions:**
+- Anything that blocked progress
+**Next session should start with:**
+- Exact first action to take
+- Any context that won't be obvious from the code
+**IDs and values discovered this session:**
+- Any GCP resource IDs, ARNs, datastore IDs, etc. found during the session
+---
+
 ## What this repo is
 
 Personal finance second brain. Ingests podcasts (AWS Transcribe), PDFs, articles, voice memos, and receipts (OCR) → indexes in Vertex AI Search → exposes over Telegram bot with grounded answers + source citations. Instrumented with Google Tag Gateway (server-side GTM) pushing events to GA4 + BigQuery.
