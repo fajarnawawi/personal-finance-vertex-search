@@ -1,0 +1,17 @@
+# Feed definitions for the RSS watcher Lambda
+# RSS URLs must be verified against each show's official podcast page before enabling
+feeds:
+  - name: motley_fool_money
+    rss_url: null  # TODO: verify current URL at fool.com/podcasts/motley-fool-money
+    language_code: en-US
+    enabled: false
+
+  - name: morningstar_investing_insights
+    rss_url: null  # TODO: verify current URL at morningstar.com
+    language_code: en-US
+    enabled: false
+
+  - name: cuap_cuap_cuan
+    rss_url: null  # TBD — verify RSS availability first (see PROJECT.md open decisions)
+    language_code: id-ID
+    enabled: false
