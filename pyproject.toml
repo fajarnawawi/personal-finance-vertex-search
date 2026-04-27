@@ -1,0 +1,40 @@
+[project]
+name = "finance-brain"
+version = "0.1.0"
+description = "Personal finance second brain — Telegram bot backed by Vertex AI Search"
+requires-python = ">=3.11"
+dependencies = [
+    "python-telegram-bot[webhooks]>=20.0",
+    "google-cloud-bigquery>=3.0",
+    "google-cloud-storage>=2.0",
+    "google-cloud-discoveryengine>=0.11.0",
+    "google-cloud-aiplatform>=1.0",
+    "boto3>=1.26.0",
+    "feedparser>=6.0.0",
+    "httpx>=0.24.0",
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "python-dotenv>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.1.0",
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

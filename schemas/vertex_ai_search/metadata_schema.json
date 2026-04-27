@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Metadata schema for all documents indexed in Vertex AI Search datastores",
+  "type": "object",
+  "properties": {
+    "source_type": {
+      "type": "string",
+      "enum": ["podcast", "article", "pdf", "voice_memo", "receipt", "note"],
+      "description": "Content origin — determines citation format and datastore routing"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["en", "id"],
+      "description": "Document language; used for query-time boosting, not hard filtering"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of original content creation (episode publish date, receipt date, etc.)"
+    },
+    "source_name": {
+      "type": "string",
+      "description": "Human-readable source label (e.g. 'Motley Fool Money', 'Morningstar Investing Insights')"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "Unique identifier for the source document (RSS GUID or URL hash)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Episode title, article headline, or document name"
+    },
+    "chunk_start_sec": {
+      "type": "integer",
+      "description": "Start time in seconds for media chunks; absent on non-media documents"
+    },
+    "chunk_end_sec": {
+      "type": "integer",
+      "description": "End time in seconds for media chunks; absent on non-media documents"
+    },
+    "original_uri": {
+      "type": "string",
+      "description": "Canonical URI of the source file (s3://, gs://, or https://)"
+    }
+  },
+  "required": ["source_type", "language", "created_at", "source_name", "source_id", "title", "original_uri"]
+}

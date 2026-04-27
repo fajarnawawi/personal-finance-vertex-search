@@ -1,0 +1,79 @@
+# ── Python ───────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# ── Virtual environments ──────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Testing ───────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+
+# ── Linting / formatting ──────────────────────
+.ruff_cache/
+.mypy_cache/
+
+# ── Environment / secrets ─────────────────────
+.env
+.env.local
+.env.*.local
+
+# GCP service account key files — NEVER commit these
+*-service-account.json
+*-sa-key.json
+service_account_key.json
+credentials.json
+application_default_credentials.json
+
+# AWS credentials
+.aws/
+
+# ── Terraform ─────────────────────────────────
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.backup
+infra/terraform/*.tfplan
+infra/terraform/.terraform.lock.hcl
+
+# ── Node / Next.js (dashboard) ────────────────
+node_modules/
+.next/
+dashboard/.env
+dashboard/.env.local
+
+# ── OS ────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# ── IDE ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Logs ─────────────────────────────────────
+*.log
+logs/
+
+# ── Misc ──────────────────────────────────────
+*.tmp
+.cache/
